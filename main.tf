@@ -1,3 +1,11 @@
+#grab aws prifix to mention in security group which allow connect option in aws console
+
+data "aws_ec2_managed_prefix_list" "eic"{
+
+    name = "com.amezonaws.ap-south-1.ec2-instance-connect"
+}
+
+
 resource "aws_security_group" "groupfordocker" {
 
     name = "this security group use for docker"
@@ -15,7 +23,8 @@ resource "aws_security_group" "groupfordocker" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        prefix_list_ids = ["pl-0fa83cebf909345ca"]
+        #prefix_list_ids = ["pl-0fa83cebf909345ca"]
+        prefix_list_ids = [data.aws_ec2_managed_prefix_list.eic.id]
     }
 
     egress {

@@ -1,0 +1,11 @@
+[33mcommit 3f52f5f550cc224ee63f7bc77c34a5dc0ad824a6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Swapnil <ssdpawar1991@gmail.com>
+Date:   Wed Oct 14 15:40:21 2026 +0530
+
+    updated with fix region
+
+[33mcommit c206a1b2df2ed7ff65b3f56bde1749d5c433203b[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Swapnil <ssdpawar1991@gmail.com>
+Date:   Wed Oct 14 12:42:17 2026 +0530
+
+    mention provider, created security group and metion in instance block, cerated instace
