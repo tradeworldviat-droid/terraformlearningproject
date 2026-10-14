@@ -8,7 +8,14 @@ resource "aws_security_group" "groupfordocker" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_blocks = "0.0.0.0/0"
+        cidr_blocks = ["116.74.138.218/32"]
+    }
+
+    ingress {
+        from_port = 22
+        to_port = 22
+        protocol = "tcp"
+        prefix_list_ids = ["pl-0fa83cebf909345ca"]
     }
 
     egress {
@@ -16,7 +23,7 @@ resource "aws_security_group" "groupfordocker" {
         from_port = 0
         to_port = 0
         protocol = "-1"
-        cidr_blocks = "0.0.0.0/0"
+        cidr_blocks = ["0.0.0.0/0"]
     }
   
 }
@@ -29,8 +36,8 @@ resource "aws_instance" "dockeruse"{
   vpc_security_group_ids = [aws_security_group.groupfordocker.id]
 
   tags = {
-    name = "dockerinstance"
-    description = "this will use for docker"
+    Name = "dockerinstance"
+    Description = "this will use for docker"
   }
 
 }

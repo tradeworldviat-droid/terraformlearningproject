@@ -6,3 +6,7 @@ terraform {
     }
   }
 }
+#below code will fix region permanantly
+provider "aws" {
+      region = "ap-south-1"
+}
